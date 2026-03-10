@@ -51,7 +51,7 @@ This architecture allows for scalable, decoupled communication where the ESP32 f
 
 1. **Install Libraries**: In Arduino IDE, install the required libraries via Library Manager.
 
-2. **Configure MQTT Broker**: Ensure your MQTT broker (e.g., Mosquitto on RPi) is running at `192.168.50.70` on port 1883. Update `mqtt_server` and `mqtt_topic` in the code if needed.
+2. **Configure MQTT Broker**: Ensure your MQTT broker (e.g., Mosquitto on RPi) is running at `~` on port 1883. Update `mqtt_server` and `mqtt_topic` in the code if needed.
 
 3. **Upload Code**: Connect your ESP32 to your computer, select the appropriate board in Arduino IDE, and upload the `main.ino` sketch.
 
@@ -65,7 +65,7 @@ Once set up, the ESP32 will:
 - Connect to WiFi automatically.
 - Display connection status on the OLED.
 - Read temperature every 5 seconds and display it.
-- Publish temperature data to the MQTT topic "spectre/temp".
+- Publish temperature data to the MQTT topic "~".
 
 On the RPi side (not included here):
 - Run an MQTT broker to receive messages.
@@ -73,8 +73,8 @@ On the RPi side (not included here):
 
 ## MQTT Details
 
-- **Broker**: 192.168.50.70:1883
-- **Topic**: spectre/temp
+- **Broker**: ~:1883
+- **Topic**: ~/temp
 - **Message Format**: Temperature value as a string (e.g., "72.50")
 
 ## Troubleshooting
